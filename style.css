@@ -57,6 +57,35 @@ main {
 	border: 1px solid #FF1F57;
 	border-radius: 3px;
 }
+.info-container {
+	width: 100%;
+	height: 200px;
+	margin: 50px 0px 0px 0px;
+	text-align: center;
+	border: 1px solid black;
+}
+.api-form-container {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	border: 1px solid black;
+}
+.api-results-container {
+	width: 90%;
+	margin: 25px 0px 0px 5%;
+	min-height: 400px;
+	max-height: 800px;
+	overflow: scroll;
+	background-color: #FFF;
+	border-radius: 3px;
+}
+.about-container {
+	width: 100%;
+	height: 200px;
+	margin: 50px 0px 50px 0px;
+	text-align: center;
+	border: 1px solid black;
+}
 #footer {
 	width: 100%;
 	height: 100px;
