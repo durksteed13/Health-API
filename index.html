@@ -10,7 +10,17 @@
 	<div id="header-container"></div>
 	<main>
 		<div class="info-container">HEADER HERE</div>
-		<div class="api-form-container">api form</div>
+		<div class="api-form-container">
+			<form>
+				<div><select id="api-selector">
+					<option value="" selected disabled>Please select an API</option>
+				</select></div>
+				<div><select id="api-data-selector">
+					<option value="" selected disabled>Please select API parameter</option>
+				</select></div>
+				<button>Search API</button>
+			</form>
+		</div>
 		<div class="api-results-container">json results</div>
 		<div class="about-container">ABOUT HERE</div>
 	</main>
