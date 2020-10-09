@@ -10,3 +10,5 @@ function validate(pword, db_salt, db_hash) {
 	}
 	return false;
 }
+
+exports.validate = validate;
