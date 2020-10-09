@@ -1,7 +1,7 @@
 //used to encrypt passwords for creating users
+const crypto = require("crypto");
 
-export const encrypt = function(pword) {
-	var crypto = require("crypto");
+function encrypt(pword) {
 	var salt = crypto.randomBytes(20).toString('hex');
 
 	var hash = salt.concat(pword);
@@ -12,3 +12,5 @@ export const encrypt = function(pword) {
 	result['hash'] = hash;
 	return result;
 }
+
+exports.encrypt = encrypt;
