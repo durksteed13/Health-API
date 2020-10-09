@@ -1,8 +1,7 @@
 //used to validate crediential inputs
+const crypto = require("crypto");
 
-export const validate = function(pword, db_salt, db_hash) {
-	var crypto = require("crypto");
-
+function validate(pword, db_salt, db_hash) {
 	var hash = db_salt.concat(pword);
 	hash = crypto.createHash('md5').update(hash).digest('hex');
 
