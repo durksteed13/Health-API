@@ -1,0 +1,26 @@
+{
+  "name": "426-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "426.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durksteed13/426-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durksteed13/426-final/issues"
+  },
+  "homepage": "https://github.com/durksteed13/426-final#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1"
+  }
+}
