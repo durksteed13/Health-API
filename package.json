@@ -17,10 +17,17 @@
   },
   "homepage": "https://github.com/durksteed13/426-final#readme",
   "dependencies": {
+    "axios": "^0.21.0",
+    "body": "^5.1.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "parser": "^0.1.4",
+    "pg": "^8.4.2",
+    "queries": "^0.1.0",
+    "tedious": "^9.2.1"
   }
 }
