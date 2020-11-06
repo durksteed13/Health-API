@@ -1,0 +1,80 @@
+#landing-navigation-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+#landing-navigation-container button{
+	font-size: 18px;
+}
+#landing-wrapper {
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+}
+#landing-container {
+	width: 100%;
+}
+#landing-text-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+#landing-text-container h2 {
+	font-size: 60px;
+}
+#data-wrapper {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#data-container {
+	width: 80%;
+	height: 50px;
+	max-height: 600px;
+	border: 2px solid #FF1F57;
+	border-radius: 10px;
+	overflow: scroll;
+	-webkit-transition-duration: 0.2s; /* Safari */
+  	transition-duration: 0.2s;
+}
+.card-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card-content form {
+	margin-top: -40px;
+}
+input {
+	display: block;
+	margin: 0px 0px 20px 0px;
+	text-align: center;
+	padding: 10px 80px;
+}
+select {
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#btn-wrapper {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+#api-submit {
+	display: block;
+	margin: 0 auto;
+	width: 300px;
+}
+.message-container {
+	margin: 20px 10px 0px 10px;
+	width: 100%;
+	text-align: center;
+	height: 20px;
+	font-weight: bold;
+	font-style: italic;
+}
