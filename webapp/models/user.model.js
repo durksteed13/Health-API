@@ -54,4 +54,41 @@ User.find = (username, password, result) => {
   });
 };
 
+User.listAPI = result => {
+  sql.query("SELECT name FROM api", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    console.log("api names: ", res);
+    result(null, res);
+  });
+};
+
+User.listParam = (api, result) => {
+  sql.query("SELECT name FROM params WHERE api_used = ?", api, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    console.log("params: ", res);
+    result(null, res);
+  });
+};
+
+User.getAPILink = (apiName, paramName, result) => {
+  sql.query("SELECT url FROM api WHERE name = ? UNION SELECT param FROM params WHERE name = ?", [apiName, paramName], (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    var link = res[0]['url']+res[1]['url'];
+    console.log("link: ", link);
+    result(null, link);
+  });
+};
+
 module.exports = User;

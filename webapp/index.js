@@ -58,8 +58,8 @@ async function handleLogIn() {
         method: 'post',
        	url: "http://localhost:3000/users/"+insertUserName,
        	data: {
-       	username : insertUserName,
-       	password : data[1]['value']
+       		username : insertUserName,
+       		password : data[1]['value']
        	},
     });
 	var success = result['data']['success'];
@@ -82,10 +82,59 @@ function checkLogIn() {
 		$(".btn").remove();
 	} else {
 		$(".user-btn").remove();
-		
+
 	}
+}
+
+async function loadAPI() {
+	const result = await axios({
+        method: 'get',
+       	url: "http://localhost:3000/api",
+    });
+    result['data'].forEach(api => {
+    	var apiName = api['name'];
+    	$('#api-selector').append("<option value='"+apiName+"'>"+apiName+"</option>");
+    });
+}
+
+$('#api-selector').change(async function () {
+	$('#param-selector').empty();
+	$('#param-selector').removeClass("is-disabled");
+  	var selected = $('#api-selector option:selected' ).text();
+  	const result = await axios({
+        method: 'post',
+       	url: "http://localhost:3000/api",
+       	data: {
+       		api : selected
+       	}
+    });
+  	result['data'].forEach(param => {
+  		var paramName = param['name'];
+  		$('#param-selector').append("<option value='"+paramName+"'>"+paramName+"</option>");
+  	});
+});
+
+async function handleAPISubmit() {
+	var selectedAPI = $('#api-selector option:selected' ).text();
+	var selectedParam = $('#param-selector option:selected' ).text();
+	const result = await axios({
+        method: 'get',
+       	url: "http://localhost:3000/apilink",
+       	params: {
+       		apiName : selectedAPI,
+       		paramName : selectedParam
+       	}
+    });
+    console.log(result['data']);
+    const APIResult = await axios({
+        method: 'get',
+       	url: result['data']
+    });
+   	console.log(APIResult);
+   	$('#data-container').append(JSON.stringify(APIResult['data']));
 }
 
 $(document).ready(function() {
 	checkLogIn();
+	loadAPI();
 });

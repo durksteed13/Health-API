@@ -44,13 +44,14 @@ main {
 }
 #data-container {
 	width: 80%;
-	height: 50px;
+	height: auto;
 	max-height: 600px;
 	border: 2px solid #FF1F57;
 	border-radius: 10px;
 	overflow: scroll;
 	-webkit-transition-duration: 0.2s; /* Safari */
   	transition-duration: 0.2s;
+  	padding: 20px 5px;
 }
 .card-content {
 	display: flex;
