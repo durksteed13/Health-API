@@ -33,15 +33,15 @@
 		</div>
 		<div id="landing-wrapper">
 			<div id="landing-container">
-				<form>
+				<div>
 					<select required id="api-selector">
 						<option value="" disabled selected>Select an API</option>
 					</select>
 					<select required id="param-selector" class="is-disabled">
 						<option value="" disabled selected>Select API Search Parameters</option>
 					</select>
-					<button id="api-submit" class="green-dark is-large">Search API</button>
-				</form>
+					<button id="api-submit" class="green-dark is-large" onclick="handleAPISubmit()">Search API</button>
+				</div>
 			</div>
 		</div>
 		<div id="data-wrapper">
@@ -53,7 +53,7 @@
 		</div>
 	</main>
 	<div id="footer-container" class="red-light">
-		Want to request a new API to be added to our application? Email ______________
+		Want a new API to be added to our application? Email ______________
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="webapp/style.js"></script>

@@ -41,3 +41,24 @@ exports.find = (req, res) => {
     res.send(data);
   });
 };
+
+// Get List of API names
+exports.listAPI = (req, res) => {
+  User.listAPI((err, data) => {
+    res.send(data);
+  });
+};
+
+// Get Params for given API
+exports.listParam = (req, res) => {
+  User.listParam(req.body.api, (err, data) => {
+    res.send(data);
+  });
+};
+
+// Get URL for API call for given API and Param
+exports.getAPILink = (req, res) => {
+  User.getAPILink(req.param('apiName'), req.param('paramName'), (err, data) => {
+    res.send(data);
+  });
+};
