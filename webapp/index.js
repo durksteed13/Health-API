@@ -115,6 +115,7 @@ $('#api-selector').change(async function () {
 });
 
 async function handleAPISubmit() {
+	$('#data-container').empty();
 	var selectedAPI = $('#api-selector option:selected' ).text();
 	var selectedParam = $('#param-selector option:selected' ).text();
 	const result = await axios({
@@ -125,12 +126,10 @@ async function handleAPISubmit() {
        		paramName : selectedParam
        	}
     });
-    console.log(result['data']);
     const APIResult = await axios({
         method: 'get',
        	url: result['data']
     });
-   	console.log(APIResult);
    	$('#data-container').append(JSON.stringify(APIResult['data']));
 }
 

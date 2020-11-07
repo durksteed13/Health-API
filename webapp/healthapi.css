@@ -10,6 +10,7 @@ body {
 main {
   	flex: 1;
   	background-color: #transparent;
+  	text-align: center;
 }
 #landing-navigation-container {
 	width: 100%;
@@ -51,7 +52,7 @@ main {
 	overflow: scroll;
 	-webkit-transition-duration: 0.2s; /* Safari */
   	transition-duration: 0.2s;
-  	padding: 20px 5px;
+  	padding: 10px 10px;
 }
 .card-content {
 	display: flex;
