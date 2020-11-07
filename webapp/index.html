@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Health API: Medical data made easy</title>
+	<link rel="stylesheet" type="text/css" href="webapp/style.css">
+	<link rel="stylesheet" type="text/css" href="webapp/healthapi.css">
+	<script src="../node_modules/axios/dist/axios.js"></script>
+</head>
+<body>
+	<div class="popup-overlay"></div>
+	<div class="popup-display">
+	</div>
+	<div id="navigation-wrapper">
+		<div class="navigation">
+			<div class="navigation-logo">
+				<a href=""><h1 class="red-light">Health API</h1></a>
+			</div>
+			<div class="navigation-list">
+				<button id="btn-log" class="is-light red-light btn" onclick="loadLoginForm()">Login</button>
+				<button id="btn-sign" class="red-dark btn" onclick="signUpForm()">Sign Up</button>
+				<button id="btn-log-out" class="is-light red-light user-btn" onclick="handleLogOut()">Log Out</button>
+			</div>
+		</div>
+	</div>
+	<main>
+		<div id="landing-navigation-container">
+			<button id="btn-log" class="is-light red-light" onclick="">About</button>
+			<button id="btn-log" class="is-light red-light" onclick="">Help</button>
+			<button id="btn-log" class="is-light red-light user-btn" onclick="">Saved API Calls</button>
+		</div>
+		<div id="landing-text-container">
+			<h2>Health data made&nbsp;<span style="text-decoration: underline; color: #FF1F57;">easy</span></h2>
+		</div>
+		<p style="margin-top: 25px; text-decoration: underline; cursor: pointer;" class="red-light" onclick="loadLoginForm()">Create an account and save API searches</p>
+		<div id="landing-wrapper">
+			<div id="landing-container">
+				<div>
+					<select required id="api-selector">
+						<option value="" disabled selected>Select an API</option>
+					</select>
+					<select required id="param-selector" class="is-disabled">
+						<!-- <option value="" disabled selected>Select API Search Parameters</option> -->
+					</select>
+					<button id="api-submit" class="green-dark is-large" onclick="handleAPISubmit()">Search API</button>
+				</div>
+			</div>
+		</div>
+		<div id="data-wrapper">
+			<div id="data-container">
+				
+			</div>
+		</div>
+		<div id="help-wrapper">
+		</div>
+	</main>
+	<div id="footer-container" class="red-light">
+		Want a new API to be added to our application? Email ______________
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="webapp/style.js"></script>
+	<script type="text/javascript" src="webapp/index.js"></script>
+</body>
+</html>

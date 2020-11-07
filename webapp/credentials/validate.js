@@ -7,6 +7,7 @@ function validate(pword, db_salt, db_hash) {
 
 	if(hash === db_hash) {
 		return true;
+		
 	}
 	return false;
 }

@@ -12,7 +12,7 @@ body {
 }
 main {
   	flex: 1;
-  	background-color: #FF1F57;
+  	background-color: transparent;
 }
 #header {
 	width: 100%;
