@@ -53,6 +53,7 @@ main {
 	-webkit-transition-duration: 0.2s; /* Safari */
   	transition-duration: 0.2s;
   	padding: 10px 10px;
+  	text-align: left;
 }
 .card-content {
 	display: flex;

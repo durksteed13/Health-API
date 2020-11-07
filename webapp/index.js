@@ -108,6 +108,7 @@ $('#api-selector').change(async function () {
        		api : selected
        	}
     });
+    // $('#param-selector').append("<option value='' disabled selected>Select API Search Parameters</option>");
   	result['data'].forEach(param => {
   		var paramName = param['name'];
   		$('#param-selector').append("<option value='"+paramName+"'>"+paramName+"</option>");
