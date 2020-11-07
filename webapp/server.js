@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
 });
 
-require("./routes/customer.routes.js")(app);
 require("./routes/users.routes.js")(app);
 
 // set port, listen for requests
