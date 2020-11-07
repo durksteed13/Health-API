@@ -80,6 +80,7 @@ function handleLogOut() {
 function checkLogIn() {
 	if(document.cookie.includes("username")) {
 		$(".btn").remove();
+		$("#sign-up-link").remove();
 	} else {
 		$(".user-btn").remove();
 
