@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
 });
 
 require("./routes/users.routes.js")(app);
+require("./routes/adminapi.routes.js")(app);
+require("./routes/adminparam.routes.js")(app);
 
 // set port, listen for requests
 app.listen(3000, () => {
