@@ -9,7 +9,7 @@ body {
 }
 main {
   	flex: 1;
-  	background-color: #transparent;
+  	background-color: transparent;
   	text-align: center;
 }
 #landing-navigation-container {
