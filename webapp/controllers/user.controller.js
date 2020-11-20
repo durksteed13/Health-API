@@ -63,8 +63,16 @@ exports.getAPILink = (req, res) => {
   });
 };
 
+// Save API Search for given user
 exports.saveSearch = (req, res) => {
   User.saveSearch(req.body.userID, req.body.apiName, req.body.paramName, (err, data) => {
+    res.send(data);
+  });
+};
+
+// Get API searches for given user
+exports.getSearches = (req, res) => {
+  User.getSearches(req.body.userID, (err, data) => {
     res.send(data);
   });
 };
