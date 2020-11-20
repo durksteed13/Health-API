@@ -39,7 +39,7 @@ async function loadAPIparameters() {
 async function handleAdminNewApi() { // add new api
 	let name = $('#apiName').val();
 	let url = $('#apiURL').val();
-	buildNewAPIForm();
+	buildNewAPIForm(event);
 	const result = await axios({
         method: 'post',
 		url: "http://localhost:3000/adminapi",
@@ -54,7 +54,7 @@ async function handleAdminNewApiParameter() { // add new parameters
 	let api_used = $( "#selectedAPIparam option:selected" ).text();
 	let param = $('#apiParameter').val()
 	let name = $('#apiParametername').val()
-	buildNewParam();
+	buildNewParam(event);
 	const result = await axios({
         method: 'post',
 		url: "http://localhost:3000/adminparam",
@@ -73,7 +73,7 @@ async function handleDeleteAPI() { // deletes all APIs and it's corresponding pa
         method: 'delete',
 		url: `http://localhost:3000/adminapi/${apiname}`,
 	});
-	buildDeleteAPI();
+	buildDeleteAPI(event);
 }
 
 async function handleDeleteParam() { // deletes specific parameter
@@ -82,7 +82,7 @@ async function handleDeleteParam() { // deletes specific parameter
         method: 'delete',
 		url: `http://localhost:3000/adminparam/${paramname}`,
 	});
-	buildDeleteParam();
+	buildDeleteParam(event);
 }
 
 // load and display api functionalities
