@@ -180,3 +180,37 @@ button.green-dark:hover {
 	margin-right: 50px;
 }
 
+/* styling for admin page */
+.adminpanel {
+    height: 80vh;
+    width: 80vw;
+	border: solid;
+	border-radius: 4px;
+	border-color: #FF1F57;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.adminNavbar {
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	margin-bottom: 25px;
+}
+
+.adminNavButton {
+	background-color: #EF2F5F;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.adminNavButton:hover {
+	cursor: pointer;
+	background-color: #FF7F9F;
+}
+
+.apilist {
+	margin-top: 20px;
+}
