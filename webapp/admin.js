@@ -86,16 +86,19 @@ async function handleDeleteParam() { // deletes specific parameter
 }
 
 // load and display api functionalities
-function buildCurrentAPIForm() {
+function buildCurrentAPIForm(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<h1>Current APIs</h1>
 	<select class="apilist" multiple="multiple">
 	</select>
 </div>`);
 loadAPIs();
+	setCurrentTabColor(event.currentTarget);
 }
 
-function buildNewAPIForm() {
+function buildNewAPIForm(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<h1>Add New API</h1>
 	<form>
@@ -108,9 +111,11 @@ function buildNewAPIForm() {
 		<!-- setting type to button instead of submit fixes axios problem -->
 	</form>
 </div>`);
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildNewParam() {
+function buildNewParam(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<h1>Add New API Parameter</h1>
 	<select class="apilist" id="selectedAPIparam">
@@ -123,9 +128,11 @@ function buildNewParam() {
 		onclick="handleAdminNewApiParameter()" style="margin: auto;">
 </div>`);
 loadAPIs();
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildDeleteAPI() {
+function buildDeleteAPI(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<h1>Delete API and it's parameters</h1>
 	<select class="apilist" id="apitodelete">
@@ -134,9 +141,11 @@ function buildDeleteAPI() {
 		style="margin: auto;">
 </div>`);
 loadAPIs();
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildDeleteParam() {
+function buildDeleteParam(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<h1>Delete an API parameter</h1>
 	<select class="paramlist" id="paramtodelete">
@@ -145,12 +154,23 @@ function buildDeleteParam() {
 		onclick="handleDeleteParam()" style="margin: auto;">
 </div>`);
 loadAPIparameters();
+setCurrentTabColor(event.currentTarget);
+}
+
+// Set colors
+function setDefaultColor() {
+	$('.adminNavButton').css('background-color', '#EF2F5F');
+}
+
+function setCurrentTabColor(targetToChange) {
+	$(targetToChange).css('background-color', '#F24C75');
+
 }
 
 $(document).ready(function() {
 	loadAPIs();
 	loadAPIparameters();
-
+	setDefaultColor();
 
 	var role = localStorage.getItem('role');
 	console.log(role);

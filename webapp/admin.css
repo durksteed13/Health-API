@@ -1,0 +1,29 @@
+/* styling for admin page */
+.adminpanel {
+    height: 80vh;
+    width: 80vw;
+	margin: auto;
+	margin-top: 20px;
+}
+.adminNavbar {
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	margin-bottom: 25px;
+}
+.adminNavButton {
+	width: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.adminNavButton:hover {
+	cursor: pointer;
+	background-color: #FF7F9F;
+}
+.apilist {
+	margin-top: 20px;
+}
