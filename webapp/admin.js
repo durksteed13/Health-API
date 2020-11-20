@@ -150,10 +150,7 @@ loadAPIparameters();
 $(document).ready(function() {
 	loadAPIs();
 	loadAPIparameters();
-
-
 	var role = localStorage.getItem('role');
-	console.log(role);
 	if(role == 1) {
 		$('body').css("visibility", "visible");
 	} else {
