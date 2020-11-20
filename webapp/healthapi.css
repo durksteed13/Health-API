@@ -52,18 +52,27 @@ main {
 	background-color: #FF1F57;
 }
 #data-container {
-	width: 80%;
+	/*margin-top: -10px;*/
+	width: 90%;
 	height: auto;
 	min-height: 100px;
-	max-height: 600px;
+	/*max-height: 600px;*/
 	/*border: 2px solid #FF1F57;*/
 	border-radius: 5px;
-	overflow: scroll;
+	/*overflow: scroll;*/
 	-webkit-transition-duration: 0.2s; /* Safari */
   	transition-duration: 0.2s;
   	padding: 10px 10px;
   	text-align: left;
   	background-color: #FFF;
+}
+#data-search {
+	margin-top: -20px;
+	margin-bottom: 5px;
+	color: #FFF;
+	text-align: left;
+	margin-left: 5%;
+	font-size: 16px;
 }
 .card-dynamic, .card-dynamic-tall {
 	min-width: 400px;

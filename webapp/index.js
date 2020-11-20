@@ -81,6 +81,7 @@ function handleLogOut() {
 
 function checkLogIn() {
 	if(document.cookie.includes("username")) {
+		console.log(document.cookie);
 		$(".btn").remove();
 		$("#sign-up-link").remove();
 	} else {
@@ -119,8 +120,10 @@ $('#api-selector').change(async function () {
 
 async function handleAPISubmit() {
 	$('#data-container').empty();
+	$('#data-search').empty();
 	var selectedAPI = $('#api-selector option:selected' ).text();
 	var selectedParam = $('#param-selector option:selected' ).text();
+	$('#data-search').append("Data from " + selectedAPI + ", " + selectedParam);
 	const result = await axios({
         method: 'get',
        	url: "http://localhost:3000/apilink",
