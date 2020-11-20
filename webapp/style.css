@@ -47,6 +47,9 @@ select.is-disabled {
 .is-red {
 	color: #FF1F57;
 }
+.white-light {
+	color: #FFF;
+}
 .red-light {
 	color: #FF1F57;
 }
