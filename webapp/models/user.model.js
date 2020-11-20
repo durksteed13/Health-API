@@ -25,7 +25,7 @@ User.create = (newUser, result) => {
       }
       var success = true;
       console.log("created user: ", { email: res.insertEmail, ...newUser });
-      result(null, {"success" : success  });
+      result(null, {"success" : success, email: res.insertEmail, ...newUser   });
     });
     }
   });
@@ -45,7 +45,8 @@ User.find = (username, password, result) => {
       if(success) {
         console.log(res[0]['username'] + " logged in");
       }
-      result(null, {"success" : success  });
+      console.log(res);
+      result(null, {"success" : success, "result" : res  });
       return;
     }
 

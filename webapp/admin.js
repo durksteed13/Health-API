@@ -150,4 +150,9 @@ loadAPIparameters();
 $(document).ready(function() {
 	loadAPIs();
 	loadAPIparameters();
+	if(role == 1) {
+		$('body').css("visibility", "visible");
+	} else {
+		window.location.replace("index.html");
+	}
 });
