@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Health API: Medical data made easy</title>
-	<link rel="stylesheet" type="text/css" href="webapp/style.css">
-	<link rel="stylesheet" type="text/css" href="webapp/healthapi.css">
-	<script src="../node_modules/axios/dist/axios.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="healthapi.css">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 	<div class="popup-overlay"></div>
@@ -24,8 +24,8 @@
 	</div>
 	<main>
 		<div id="landing-navigation-container">
-			<button id="btn-log" class="is-light red-light" onclick="">About</button>
-			<button id="btn-log" class="is-light red-light" onclick="">Help</button>
+			<a href="about.html"><button id="btn-log" class="is-light red-light" onclick="">About</button></a>
+			<a href="help.html"><button id="btn-log" class="is-light red-light" onclick="">Help</button></a>
 			<button id="btn-log" class="is-light red-light user-btn" onclick="">Saved API Calls</button>
 		</div>
 		<div id="landing-text-container">
@@ -57,7 +57,7 @@
 		Want a new API to be added to Health API? Email ______________
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="webapp/style.js"></script>
-	<script type="text/javascript" src="webapp/index.js"></script>
+	<script type="text/javascript" src="style.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
