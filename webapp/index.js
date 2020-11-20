@@ -1,5 +1,6 @@
 var loginForm = "<div class='card-dynamic' style='height: 350px; max-height: 350px;'><div class='card-title red-light'><h2 class='is-indent-max'>Login</h2><button onclick='closePopup()' class='is-light red-light is-right-indent no-hover'>X</button></div><div class='message-container red-light'></div><div class='card-content'><form class='popup-form' method='post'><input required name='username' type='username' placeholder='username' class='red-light'><input required name='password' type='password' placeholder='password' class='red-light'><div id='btn-wrapper'><button type='button' id='btn-popup' class='red-dark is-large' onclick='handleLogIn()'>Login</button></div></form></div></div>";
 var signupForm = "<div class='card-dynamic-tall' style='height: 475px; max-height: 475px;'><div class='card-title red-light'><h2 class='is-indent-max'>Sign Up</h2><button onclick='closePopup()' class='is-light red-light is-right-indent no-hover'>X</button></div><div class='message-container red-light'></div><div class='card-content'><form class='popup-form'><input required name='name' type='name' placeholder='name' class='red-light' method='post'><input required name='email' type='email' placeholder='email address' class='red-light'><input required name='username' type='username' placeholder='username' class='red-light'><input required name='password' type='password' placeholder='password' class='red-light'><div id='btn-wrapper'><button type='button' id='btn-popup' class='red-dark is-large' onclick='handleSignUp()'>Sign Up</button></div></form></div></div>";
+var apis = [];
 
 function signUpForm() {
 	$(".popup-display").append(signupForm);
@@ -111,6 +112,7 @@ async function loadAPI() {
        	url: "http://localhost:3000/api",
     });
     result['data'].forEach(api => {
+    	apis.push(api['name']);
     	var apiName = api['name'];
     	$('#api-selector').append("<option value='"+apiName+"'>"+apiName+"</option>");
     });
@@ -158,4 +160,5 @@ async function handleAPISubmit() {
 $(document).ready(function() {
 	checkLogIn();
 	loadAPI();
+	console.log(apis);
 });
