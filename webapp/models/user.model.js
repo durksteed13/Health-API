@@ -93,7 +93,7 @@ User.getAPILink = (apiName, paramName, result) => {
 };
 
 User.saveSearch = (userID, apiName, paramName, result) => {
-  sql.query("INSERT INTO users (?, ?, ?)", [userID, apiName, paramName], (err, res) => {
+  sql.query("INSERT INTO searches (?, ?, ?)", [userID, apiName, paramName], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
