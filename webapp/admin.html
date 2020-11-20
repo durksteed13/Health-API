@@ -5,6 +5,7 @@
 	<title>Health API: Medical data made easy</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="healthapi.css">
+	<link rel="stylesheet" type="text/css" href="admin.css">
 	<!-- <script src="../node_modules/axios/dist/axios.js"></script> not working for some reason so temp using the below-->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -31,20 +32,20 @@
 
 		<div class="adminpanel">
 			<div class="adminNavbar">
-				<div class="adminNavButton" onclick="buildCurrentAPIForm()">
-					<h1>Current APIs</h1>
+				<div class="adminNavButton" onclick="buildCurrentAPIForm(event)">
+					Current APIs
 				</div>
-				<div class="adminNavButton" onclick="buildNewAPIForm()">
-					<h1>New API</h1>
+				<div class="adminNavButton" onclick="buildNewAPIForm(event)">
+					New API
 				</div>
-				<div class="adminNavButton" onclick="buildNewParam()">
-					<h1>New API Parameter</h1>
+				<div class="adminNavButton" onclick="buildNewParam(event)">
+					New API Parameter
 				</div>
-				<div class="adminNavButton" onclick="buildDeleteAPI()">
-					<h1>Delete API</h1>
+				<div class="adminNavButton" onclick="buildDeleteAPI(event)">
+					Delete API
 				</div>
-				<div class="adminNavButton" onclick="buildDeleteParam()">
-					<h1>Delete API's Parameters</h1>
+				<div class="adminNavButton" onclick="buildDeleteParam(event)">
+					Delete API's Parameters
 				</div>
 			</div>
 
