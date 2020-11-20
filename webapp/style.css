@@ -182,3 +182,12 @@ button.green-dark:hover {
 	margin-left: auto;
 	margin-right: 50px;
 }
+
+@media (max-width: 770px) {
+	.navigation-logo {
+		margin-left: 10px;
+	}
+	.navigation-list {
+		margin-right: 10px;
+	}
+}

@@ -91,6 +91,16 @@ User.getAPILink = (apiName, paramName, result) => {
   });
 };
 
-// User.saveSearch ();
+User.saveSearch = (userID, apiName, paramName, result) => {
+  sql.query("INSERT INTO users (?, ?, ?)", [userID, apiName, paramName], (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    console.log("created new search: ", {user: userID});
+    result(null, res);
+  });
+};
 
 module.exports = User;
