@@ -38,12 +38,18 @@ async function handleSignUp() {
         },
       });
 	var success = result['data']['success'];
-	console.log(success);
-	if(success) {
-		//append cookie and redirect
-		document.cookie = "username="+insertUserName;
-		location.reload();
-	} else {
+    if(success) {
+    	console.log(result);
+    	var username = result['data']['username'];
+    	var userID = result['data']['id'];
+    	var role = result['data']['role'];
+
+    	localStorage.setItem('loggedIn', true);
+    	localStorage.setItem('username', username);
+    	localStorage.setItem('id', userID);
+    	localStorage.setItem('role', role);
+    	location.reload();
+    } else {
 		$('.message-container').prepend("<div class='red-light'>Username already taken, please try another username<div>");
 	}
 }
@@ -64,26 +70,36 @@ async function handleLogIn() {
        		password : data[1]['value']
        	},
     });
-	var success = result['data']['success'];
-	if(success) {
-		//append cookie and redirect
-		document.cookie = "username="+insertUserName;
-		location.reload();
-	} else {
-		$('.message-container').prepend("<div class='red-light'>Invalid username or password, please try again<div>");
-	}
+
+    var success = result['data']['success'];
+    if(success) {
+    	var username = result['data']['result'][0]['username'];
+    	var userID = result['data']['result'][0]['id'];
+    	var role = result['data']['result'][0]['role'];
+
+    	localStorage.setItem('loggedIn', true);
+    	localStorage.setItem('username', username);
+    	localStorage.setItem('id', userID);
+    	localStorage.setItem('role', role);
+    	location.reload();
+    } else {
+    	$('.message-container').prepend("<div class='red-light'>Invalid username or password, please try again<div>");
+    }
 }
 
 function handleLogOut() {
-	document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	localStorage.clear();
 	location.reload();
 }
 
 function checkLogIn() {
-	if(document.cookie.includes("username")) {
-		console.log(document.cookie);
+	if(localStorage.getItem('loggedIn')) {
 		$(".btn").remove();
 		$("#sign-up-link").remove();
+		var role = localStorage.getItem('role');
+		if(role == 1) {
+			$('#landing-navigation-container').append("<a href='admin.html'><button id='btn-log' class='is-light red-light user-btn' onclick=''>Admin Page</button></a>");
+		}
 	} else {
 		$(".user-btn").remove();
 	}
