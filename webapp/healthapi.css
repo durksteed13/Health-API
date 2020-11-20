@@ -6,6 +6,7 @@ body {
   	display: flex;
   	flex-direction: column;
   	justify-content: space-between;
+  	background-color: #FF1F57;
 }
 main {
   	flex: 1;
@@ -24,6 +25,10 @@ main {
 #landing-navigation-container button{
 	font-size: 18px;
 }
+#white-bckg {
+	padding-top: 10px;
+	background-color: #FFF;
+}
 #landing-wrapper {
 	margin-top: 25px;
 	display: flex;
@@ -41,22 +46,27 @@ main {
 	font-size: 60px;
 }
 #data-wrapper {
-	margin-top: 50px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	background-color: #FF1F57;
 }
 #data-container {
 	width: 80%;
 	height: auto;
+	min-height: 100px;
 	max-height: 600px;
-	border: 2px solid #FF1F57;
-	border-radius: 10px;
+	/*border: 2px solid #FF1F57;*/
+	border-radius: 5px;
 	overflow: scroll;
 	-webkit-transition-duration: 0.2s; /* Safari */
   	transition-duration: 0.2s;
   	padding: 10px 10px;
   	text-align: left;
+  	background-color: #FFF;
+}
+.card-dynamic, .card-dynamic-tall {
+	min-width: 400px;
 }
 .card-content {
 	display: flex;
@@ -95,7 +105,7 @@ select {
 	text-align: center;
 	height: 20px;
 	font-weight: bold;
-	font-style: italic;
+	/*font-style: italic;*/
 }
 #footer-container {
 	margin-top: 50px;
