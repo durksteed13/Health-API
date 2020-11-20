@@ -62,3 +62,8 @@ exports.getAPILink = (req, res) => {
     res.send(data);
   });
 };
+
+// Save search for a given User 
+// exports.saveSearch = (req, res) => {
+//   User.saveSearch()
+// };

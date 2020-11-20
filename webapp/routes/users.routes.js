@@ -16,9 +16,6 @@ module.exports = app => {
   // Get API Link for given API and Param
   app.get("/apilink", users.getAPILink);
 
-  // // Delete a Customer with customerId
-  // app.delete("/customers/:customerId", customers.delete);
-
-  // // Create a new Customer
-  // app.delete("/customers", customers.deleteAll);
+  // Save Search for given User
+  // app.post("/usersStore/:username", users.saveSearch);
 };

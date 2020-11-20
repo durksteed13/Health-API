@@ -91,4 +91,6 @@ User.getAPILink = (apiName, paramName, result) => {
   });
 };
 
+// User.saveSearch ();
+
 module.exports = User;
