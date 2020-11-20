@@ -83,7 +83,6 @@ function checkLogIn() {
 		$("#sign-up-link").remove();
 	} else {
 		$(".user-btn").remove();
-
 	}
 }
 

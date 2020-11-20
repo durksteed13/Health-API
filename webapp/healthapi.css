@@ -12,6 +12,9 @@ main {
   	background-color: transparent;
   	text-align: center;
 }
+.navigation-logo {
+	margin-right: 15px;
+}
 #landing-navigation-container {
 	width: 100%;
 	display: flex;
@@ -27,7 +30,7 @@ main {
 	justify-content: center;
 }
 #landing-container {
-	width: 100%;
+	/*width: 100%;*/
 }
 #landing-text-container {
 	display: flex;
@@ -100,4 +103,41 @@ select {
 	text-align: center;
 	font-size: 18px;
 	margin-bottom: 25px;
+}
+.about-container {
+	padding: 5px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+/* styling for admin page */
+.adminpanel {
+    height: 80vh;
+    width: 80vw;
+	border: solid;
+	border-radius: 4px;
+	border-color: #FF1F57;
+	margin: auto;
+	margin-top: 20px;
+}
+.adminNavbar {
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	margin-bottom: 25px;
+}
+.adminNavButton {
+	background-color: #EF2F5F;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.adminNavButton:hover {
+	cursor: pointer;
+	background-color: #FF7F9F;
+}
+.apilist {
+	margin-top: 20px;
 }
