@@ -93,14 +93,21 @@ User.getAPILink = (apiName, paramName, result) => {
 };
 
 User.saveSearch = (userID, apiName, paramName, result) => {
-  sql.query("INSERT INTO searches (user_id, api, param) VALUES (?, ?, ?)", [userID, apiName, paramName], (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
-      return;
+  sql.query("SELECT url FROM api WHERE name = ? UNION SELECT param FROM params WHERE name = ?", [apiName, paramName], (err, res) => {
+    if (res.length) {
+      var url = res[0]['url']+res[1]['url'];
+      console.log(url);
+      sql.query("INSERT INTO searches (user_id, api, param, url) VALUES (?, ?, ?, ?)", [userID, apiName, paramName, url], (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(err, null);
+          return;
+        }
+        console.log("created new search: ", {user: userID});
+        result(null, res);
+      });
+    } else {
     }
-    console.log("created new search: ", {user: userID});
-    result(null, res);
   });
 };
 

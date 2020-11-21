@@ -33,9 +33,10 @@ main {
 	margin-top: 25px;
 	display: flex;
 	justify-content: center;
+	height: 150px;
 }
 #landing-container {
-	/*width: 100%;*/
+	
 }
 #landing-text-container {
 	display: flex;
@@ -85,6 +86,9 @@ main {
 .card-content form {
 	margin-top: -40px;
 }
+.user-btn {
+	margin-right: 5px;
+}
 input {
 	display: block;
 	margin: 0px 0px 20px 0px;
@@ -130,3 +134,40 @@ select {
 	font-weight: normal;
 }
 
+#saves {
+	margin-top: 10px;
+	overflow: scroll;
+	margin-bottom: 10px;
+}
+
+.search-option {
+	margin-bottom: 5px;
+	max-width: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	font-size: 18px;
+}
+
+.search-option-desc {
+	margin-right: 25px;
+}
+
+.search-btn {
+	width: 100px;
+	padding: 10px 5px;
+	cursor: pointer;
+	background-color: #1F8BFF;
+	border-radius: 5px;
+	color: #FFF;
+	margin-left: auto;
+}
+
+.search-btn:hover {
+	background-color: #0076F5;
+}
+
+#welcome {
+	margin-top: 5px;
+	font-size: 18px;
+}

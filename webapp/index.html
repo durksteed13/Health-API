@@ -26,16 +26,17 @@
 	</div>
 	<main>
 	<div id="white-bckg">
+		<div id="welcome" class='is-red'></div>
 		<div id="landing-navigation-container">
-			<button id="btn-log" class="is-light red-light user-btn" onclick="">Select an API</button>
-			<button id="btn-log" class="is-light red-light user-btn" onclick="">Saved API Calls</button>
+			<button id="btn-log-select" class="red-dark user-btn" onclick="loadSelect()">Select an API</button>
+			<button id="btn-log-save" class="is-light red-light user-btn" onclick="loadSaved()">Saved API Calls</button>
 		</div>
 		<div id="landing-text-container">
 			<h2>Health data made&nbsp;<span style="text-decoration: underline; color: #FF1F57;">easy</span></h2>
 		</div>
 		<div id="landing-wrapper">
 			<div id="landing-container">
-				<div>
+				<div id="search-container">
 					<select required id="api-selector">
 						<option value="" disabled selected>Select an API</option>
 					</select>
@@ -43,6 +44,9 @@
 						<!-- <option value="" disabled selected>Select API Search Parameters</option> -->
 					</select>
 					<button id="api-submit" class="green-dark is-large" onclick="handleAPISubmit()">Search API</button>
+				</div>
+				<div id="save-container" style="visibility: hidden;">
+					<div id="saves"></div>
 				</div>
 			</div>
 			<div>
