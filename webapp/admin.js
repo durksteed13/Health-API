@@ -90,7 +90,7 @@ function buildCurrentAPIForm(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
 	<div class='selection-container'>Current APIs</div>
-	<select class="apilist" multiple="multiple">
+	<select id="list-api" class="apilist" multiple="multiple">
 	</select>
 </div>`);
 loadAPIs();

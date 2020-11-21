@@ -76,3 +76,10 @@ exports.getSearches = (req, res) => {
     res.send(data);
   });
 };
+
+// Delete Search for user
+exports.deleteSearch = (req, res) => {
+  User.deleteSearch(req.body.searchID, (err, data) => {
+    res.send(data);
+  });
+};

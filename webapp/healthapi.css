@@ -149,6 +149,10 @@ select {
 	font-size: 18px;
 }
 
+.search-option:hover {
+	background-color: #EBF4FF;
+}
+
 .search-option-desc {
 	margin-right: 25px;
 }
@@ -163,8 +167,22 @@ select {
 	margin-left: auto;
 }
 
+.search-delete-btn {
+	width: 20px;
+	padding: 5px 5px;
+	cursor: pointer;
+	background-color: #FF1F57;
+	border-radius: 5px;
+	color: #FFF;
+	margin-left: 10px;
+}
+
 .search-btn:hover {
 	background-color: #0076F5;
+}
+
+.search-delete-btn:hover {
+	background-color: #A62639;
 }
 
 #welcome {

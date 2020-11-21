@@ -130,6 +130,7 @@ async function saveSearch() {
     });
     loadSearches();
     loadSaved();
+    $('save-option').empty();
 }
 
 $('#api-selector').change(async function () {
@@ -186,6 +187,18 @@ async function handleSearchSubmit(url, selectedAPI, selectedParam) {
    	$('#data-container').append(JSON.stringify(APIResult['data']));
 }
 
+async function handleSearchDelete(id) {
+	const APIResult = await axios({
+        method: 'delete',
+       	url: "http://localhost:3000/usersSearchesDelete/"+id,
+       	data : {
+       		searchID: id
+       	}
+    });
+    loadSearches();
+    loadSaved();
+}
+
 async function loadSearches() {
 	$('#saves').empty();
 	const result = await axios({
@@ -200,7 +213,8 @@ async function loadSearches() {
     	var api = search['api'];
     	var param = search['param'];
     	var url = search['url'];
-    	$('#saves').append(`<div class='search-option'><div class='search-option-desc'>`+param+` from `+api+`</div><div class='search-btn' onclick='handleSearchSubmit("`+url+`", "`+api+`", "`+param+`")'>Get Data</div><div>`);
+    	var id = search['id'];
+    	$('#saves').append(`<div class='search-option'><div class='search-option-desc'>`+param+` from `+api+`</div><div class='search-btn' onclick='handleSearchSubmit("`+url+`", "`+api+`", "`+param+`")'>Get Data</div><div class='search-delete-btn' onclick='handleSearchDelete(`+id+`)'>x</div><div>`);
     });
 }
 
