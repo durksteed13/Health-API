@@ -101,7 +101,7 @@ function checkLogIn() {
 	if(localStorage.getItem('loggedIn')) {
 		$(".btn").remove();
 		$("#sign-up-link").remove();
-		$('#welcome').append("Welcome back, " + localStorage.getItem('name') + "!");
+		// $('#welcome').append("Welcome back, " + localStorage.getItem('name') + "!");
 		var role = localStorage.getItem('role');
 		loadSearches();
 		if(role == 1) {
@@ -125,6 +125,22 @@ async function loadAPI() {
     });
 }
 
+async function saveSearch() {
+	var selectedAPI = $('#api-selector option:selected' ).text();
+	var selectedParam = $('#param-selector option:selected' ).text();
+	const result = await axios({
+        method: 'post',
+       	url: "http://localhost:3000/usersStore/"+localStorage.getItem('id'),
+       	data: {
+       		userID : localStorage.getItem('id'),
+       		apiName : selectedAPI,
+       		paramName : selectedParam
+       	}
+    });
+    loadSearches();
+    loadSaved();
+}
+
 $('#api-selector').change(async function () {
 	$('#param-selector').empty();
 	$('#param-selector').removeClass("is-disabled");
@@ -136,12 +152,12 @@ $('#api-selector').change(async function () {
        		api : selected
        	}
     });
-    console.log('here');
     // $('#param-selector').append("<option value='' disabled selected>Select API Search Parameters</option>");
   	result['data'].forEach(param => {
   		var paramName = param['name'];
   		$('#param-selector').append("<option value='"+paramName+"'>"+paramName+"</option>");
   	});
+  	$('#search-container').append("<div id='save-option' class='is-blue' onclick='saveSearch()'>Save This Search</div>");
 });
 
 async function handleAPISubmit() {
@@ -178,6 +194,7 @@ async function handleSearchSubmit(url, selectedAPI, selectedParam) {
 }
 
 async function loadSearches() {
+	$('#saves').empty();
 	const result = await axios({
         method: 'post',
        	url: "http://localhost:3000/usersSearches/" + localStorage.getItem('id'),
@@ -195,7 +212,7 @@ async function loadSearches() {
 }
 
 function loadSelect() {
-	$('#landing-wrapper').css('height', '150px');
+	$('#landing-wrapper').css('height', '185px');
 	$('#search-container').css("visibility", "visible");
 	$('#search-container').css("height", "auto");
 	$('#search-container').css("overflow", "normal");

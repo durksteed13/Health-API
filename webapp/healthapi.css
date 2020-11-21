@@ -33,7 +33,7 @@ main {
 	margin-top: 25px;
 	display: flex;
 	justify-content: center;
-	height: 150px;
+	height: 185px;
 }
 #landing-container {
 	
@@ -121,7 +121,7 @@ select {
 	/*font-style: italic;*/
 }
 #footer-container {
-	margin-top: 50px;
+	margin-top: 30px;
 	width: 100%;
 	text-align: center;
 	font-size: 18px;
@@ -170,4 +170,10 @@ select {
 #welcome {
 	margin-top: 5px;
 	font-size: 18px;
+}
+
+#save-option {
+	text-decoration: underline;
+	cursor: pointer;
+	margin-top: 10px;
 }
