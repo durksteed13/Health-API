@@ -41,16 +41,7 @@ async function handleSignUp() {
       });
 	var success = result['data']['success'];
     if(success) {
-    	var username = result['data']['username'];
-    	var userID = result['data']['id'];
-    	var role = result['data']['role'];
-    	var name = result['data']['name'];
-
-    	localStorage.setItem('loggedIn', true);
-    	localStorage.setItem('username', username);
-    	localStorage.setItem('id', userID);
-    	localStorage.setItem('role', role);
-    	localStorage.setItem('name', name);
+    	localStorage.setItem('needs', "login");
     	location.reload();
     } else {
 		$('.message-container').prepend("<div class='red-light'>Username already taken, please try another username<div>");
@@ -157,7 +148,9 @@ $('#api-selector').change(async function () {
   		var paramName = param['name'];
   		$('#param-selector').append("<option value='"+paramName+"'>"+paramName+"</option>");
   	});
-  	$('#search-container').append("<div id='save-option' class='is-blue' onclick='saveSearch()'>Save This Search</div>");
+  	if(localStorage.getItem('loggedIn')) {
+  		$('#search-container').append("<div id='save-option' class='is-blue' onclick='saveSearch()'>Save This Search</div>");
+  	}
 });
 
 async function handleAPISubmit() {
@@ -250,4 +243,8 @@ function loadSaved() {
 $(document).ready(function() {
 	checkLogIn();
 	loadAPI();
+	if(localStorage.getItem('needs') === 'login') {
+		localStorage.clear();
+		$('#btn-log').click();
+	}
 });
