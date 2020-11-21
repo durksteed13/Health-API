@@ -45,4 +45,43 @@ button.red-dark:hover {
 	font-size: 20px;
 	color: #EF2F5F;
 	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+#admin-api-submit, #admin-apiparam-submit {
+	border: none;
+	padding: 15px 125px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#admin-api-submit:hover {
+	background-color: #11D07D;
+}
+#admin-apiparam-submit:hover {
+	background-color: #11D07D;
+}
+
+#apidelete, #paramdelete {
+	border: none;
+	padding: 15px 125px;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #EF2F5F;
+	color: #FFF;
+}
+#apidelete:hover {
+	background-color: #A62639;
+}
+#paramdelete:hover {
+	background-color: #A62639;
+}
+
+form {
+	margin-top: 25px;
+}
+
+input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10px 65px;
 }
