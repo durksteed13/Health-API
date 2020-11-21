@@ -122,4 +122,15 @@ User.getSearches = (userID, result) => {
   });
 };
 
+User.deleteSearch = (searchID, result) => {
+  sql.query("DELETE from searches WHERE id = ?", searchID, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
 module.exports = User;

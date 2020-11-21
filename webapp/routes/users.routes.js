@@ -21,4 +21,7 @@ module.exports = app => {
 
   //Get User Searches
   app.post("/usersSearches/:id", users.getSearches);
+
+  // Delete User Search
+  app.delete("/usersSearchesDelete/:searchID", users.deleteSearch);
 };

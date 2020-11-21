@@ -31,6 +31,12 @@
 }
 .apilist {
 	margin-top: 20px;
+	
+}
+
+#list-api {
+	border: none;
+	font-size: 20px;
 }
 
 button.red-dark:hover { 
