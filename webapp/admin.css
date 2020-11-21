@@ -1,15 +1,21 @@
 /* styling for admin page */
 .adminpanel {
-    height: 80vh;
-    width: 80vw;
+    height: 70vh;
+    width: 95vw;
 	margin: auto;
-	margin-top: 20px;
+	background-color: #FFF;
+	border: 1px solid #EF2F5F;
+	border-radius: 5px;
+	margin-top: -5px;
+	overflow: scroll;
 }
 .adminNavbar {
+	margin-left: calc(2.5vw - 1px);
+	width: calc(95vw + 2px);
 	display: flex;
 	justify-content: space-between;
-	height: 80px;
-	margin-bottom: 25px;
+	height: 50px;
+	margin-top: 25px;
 }
 .adminNavButton {
 	width: 100%;
@@ -17,13 +23,26 @@
 	align-items: center;
     justify-content: center;
     color: #FFF;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1em;
 }
 .adminNavButton:hover {
 	cursor: pointer;
-	background-color: #FF7F9F;
+	background-color: #F24C75;
 }
 .apilist {
 	margin-top: 20px;
+}
+
+button.red-dark:hover { 
+	background-color: #EF2F5F;
+	cursor: default;
+}
+.selection-container {
+	margin-top: 5px;
+	width: 100%;
+	border-bottom: 1px solid #EF2F5F;
+	padding: 10px 0px;
+	font-size: 20px;
+	color: #EF2F5F;
+	font-weight: bold;
 }

@@ -89,7 +89,7 @@ async function handleDeleteParam() { // deletes specific parameter
 function buildCurrentAPIForm(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Current APIs</h1>
+	<div class='selection-container'>Current APIs</div>
 	<select class="apilist" multiple="multiple">
 	</select>
 </div>`);
@@ -100,7 +100,7 @@ loadAPIs();
 function buildNewAPIForm(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Add New API</h1>
+	<div class='selection-container'>Add New API</div>
 	<form>
 		<label for="apiName">API Name</label><br>
 		<input type="text" id="apiName" name="apiName" style="margin: auto;"><br>
@@ -117,7 +117,7 @@ setCurrentTabColor(event.currentTarget);
 function buildNewParam(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Add New API Parameter</h1>
+	<div class='selection-container'>Add New API Parameter</div>
 	<select class="apilist" id="selectedAPIparam">
 	</select>
 	<label for="apiParameter">API Parameter</label><br>
@@ -134,7 +134,7 @@ setCurrentTabColor(event.currentTarget);
 function buildDeleteAPI(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Delete API and it's parameters</h1>
+	<div class='selection-container'>Delete API and it's parameters</div>
 	<select class="apilist" id="apitodelete">
 	</select>
 	<input type="submit" value="Delete" class="red-light is-large" id="apidelete" onclick="handleDeleteAPI()"
@@ -147,7 +147,7 @@ setCurrentTabColor(event.currentTarget);
 function buildDeleteParam(event) {
 	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Delete an API parameter</h1>
+	<div class='selection-container'>Delete an API parameter</div>
 	<select class="paramlist" id="paramtodelete">
 	</select>
 	<input type="submit" value="Delete" class="red-light is-large" id="paramdelete"
@@ -168,6 +168,7 @@ function setCurrentTabColor(targetToChange) {
 }
 
 $(document).ready(function() {
+	$('#nav-id').append("<button class='red-dark btn adminid' onclick='' style='margin-left: 10px;'>Admin Panel</button>");
 	loadAPIs();
 	loadAPIparameters();
 	setDefaultColor();
@@ -179,4 +180,5 @@ $(document).ready(function() {
 	} else {
 		window.location.replace("index.html");
 	}
+	$('#first-selection').click();
 });
