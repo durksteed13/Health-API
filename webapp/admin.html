@@ -21,6 +21,7 @@
 					<h1 class="red-light">Health API</h1>
 				</a>
 			</div>
+			<div id="nav-id"></div>
 			<div class="navigation-list">
 				<button id="btn-log" class="is-light red-light btn" onclick="loadLoginForm()">Login</button>
 				<button id="btn-sign" class="red-dark btn" onclick="signUpForm()">Sign Up</button>
@@ -29,13 +30,11 @@
 		</div>
 	</div>
 	<main>
-
-		<div class="adminpanel">
-			<div class="adminNavbar">
+		<div class="adminNavbar">
 				<div class="adminNavButton" onclick="buildCurrentAPIForm(event)">
 					Current APIs
 				</div>
-				<div class="adminNavButton" onclick="buildNewAPIForm(event)">
+				<div class="adminNavButton" id="first-selection" onclick="buildNewAPIForm(event)">
 					New API
 				</div>
 				<div class="adminNavButton" onclick="buildNewParam(event)">
@@ -49,13 +48,8 @@
 				</div>
 			</div>
 
-			<!-- list of current APIs -->
+		<div class="adminpanel">
 			<div class="apiHandler">
-				<div>
-					<h1>Current APIs</h1>
-					<select class="apilist" multiple="multiple">
-					</select>
-				</div>
 			</div>
 		</div>
 
