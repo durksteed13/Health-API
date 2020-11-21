@@ -17,5 +17,8 @@ module.exports = app => {
   app.get("/apilink", users.getAPILink);
 
   // Save Search for given User
-  app.post("/usersStore/:username", users.saveSearch);
+  app.post("/usersStore/:id", users.saveSearch);
+
+  //Get User Searches
+  app.post("/usersSearches/:id", users.getSearches);
 };
