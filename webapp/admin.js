@@ -39,7 +39,7 @@ async function loadAPIparameters() {
 async function handleAdminNewApi() { // add new api
 	let name = $('#apiName').val();
 	let url = $('#apiURL').val();
-	buildNewAPIForm();
+	buildNewAPIForm(event);
 	const result = await axios({
         method: 'post',
 		url: "http://localhost:3000/adminapi",
@@ -54,7 +54,7 @@ async function handleAdminNewApiParameter() { // add new parameters
 	let api_used = $( "#selectedAPIparam option:selected" ).text();
 	let param = $('#apiParameter').val()
 	let name = $('#apiParametername').val()
-	buildNewParam();
+	buildNewParam(event);
 	const result = await axios({
         method: 'post',
 		url: "http://localhost:3000/adminparam",
@@ -73,7 +73,7 @@ async function handleDeleteAPI() { // deletes all APIs and it's corresponding pa
         method: 'delete',
 		url: `http://localhost:3000/adminapi/${apiname}`,
 	});
-	buildDeleteAPI();
+	buildDeleteAPI(event);
 }
 
 async function handleDeleteParam() { // deletes specific parameter
@@ -82,78 +82,98 @@ async function handleDeleteParam() { // deletes specific parameter
         method: 'delete',
 		url: `http://localhost:3000/adminparam/${paramname}`,
 	});
-	buildDeleteParam();
+	buildDeleteParam(event);
 }
 
 // load and display api functionalities
-function buildCurrentAPIForm() {
+function buildCurrentAPIForm(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Current APIs</h1>
+	<div class='selection-container'>Current APIs</div>
 	<select class="apilist" multiple="multiple">
 	</select>
 </div>`);
 loadAPIs();
+	setCurrentTabColor(event.currentTarget);
 }
 
-function buildNewAPIForm() {
+function buildNewAPIForm(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Add New API</h1>
+	<div class='selection-container'>Add New API</div>
 	<form>
-		<label for="apiName">API Name</label><br>
-		<input type="text" id="apiName" name="apiName" style="margin: auto;"><br>
-		<label for="apiURL">API URL</label><br>
-		<input type="text" id="apiURL" name="apiURL" style="margin: auto;"><br><br>
+		<input type="text" id="apiName" name="apiName" style="margin: auto;" placeholder="API Name" autocomplete="off"><br>
+		<input type="text" id="apiURL" name="apiURL" style="margin: auto;" placeholder="API URL" autocomplete="off"><br>
 		<input type="button" value="Submit" class="green-dark is-large" id="admin-api-submit"
 			onclick="handleAdminNewApi()" style="margin: auto;">
-		<!-- setting type to button instead of submit fixes axios problem -->
 	</form>
 </div>`);
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildNewParam() {
+function buildNewParam(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Add New API Parameter</h1>
+	<div class='selection-container'>Add New API Parameter</div>
 	<select class="apilist" id="selectedAPIparam">
+	<option value="" disabled selected>Select an API</option>
 	</select>
-	<label for="apiParameter">API Parameter</label><br>
-	<input type="text" id="apiParameter" name="apiParameter" style="margin: auto;"><br>
-	<label for="apiParametername">API name</label><br>
-	<input type="text" id="apiParametername" name="apiParametername" style="margin: auto;"><br><br>
+	<input type="text" id="apiParameter" name="apiParameter" style="margin: auto;" placeholder="API Parameter"><br>
+	<input type="text" id="apiParametername" name="apiParametername" style="margin: auto;" placeholder="API Name"><br>
 	<input type="submit" value="Submit" class="green-dark is-large" id="admin-apiparam-submit"
 		onclick="handleAdminNewApiParameter()" style="margin: auto;">
 </div>`);
 loadAPIs();
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildDeleteAPI() {
+function buildDeleteAPI(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Delete API and it's parameters</h1>
+	<div class='selection-container'>Delete API and Parameters</div>
 	<select class="apilist" id="apitodelete">
+	<option value="" disabled selected>Select an API</option>
 	</select>
 	<input type="submit" value="Delete" class="red-light is-large" id="apidelete" onclick="handleDeleteAPI()"
 		style="margin: auto;">
 </div>`);
 loadAPIs();
+setCurrentTabColor(event.currentTarget);
 }
 
-function buildDeleteParam() {
+function buildDeleteParam(event) {
+	setDefaultColor();
 	$(".apiHandler").html(`<div>
-	<h1>Delete an API parameter</h1>
+	<div class='selection-container'>Delete API Parameter</div>
 	<select class="paramlist" id="paramtodelete">
+	<option value="" disabled selected>Select a Parameter</option>
 	</select>
 	<input type="submit" value="Delete" class="red-light is-large" id="paramdelete"
 		onclick="handleDeleteParam()" style="margin: auto;">
 </div>`);
 loadAPIparameters();
+setCurrentTabColor(event.currentTarget);
+}
+
+// Set colors
+function setDefaultColor() {
+	$('.adminNavButton').css('background-color', '#EF2F5F');
+}
+
+function setCurrentTabColor(targetToChange) {
+	$(targetToChange).css('background-color', '#F24C75');
+
 }
 
 $(document).ready(function() {
-	loadAPIs();
-	loadAPIparameters();
 	var role = localStorage.getItem('role');
 	if(role == 1) {
 		$('body').css("visibility", "visible");
 	} else {
 		window.location.replace("index.html");
 	}
+	$('#nav-id').append("<button class='red-dark btn adminid' onclick='' style='margin-left: 10px;'>Admin Panel</button>");
+	loadAPIs();
+	loadAPIparameters();
+	$('#first-selection').click();
 });
