@@ -172,7 +172,7 @@ async function handleAPISubmit() {
         method: 'get',
        	url: result['data']
     });
-   	$('#data-container').append(JSON.stringify(APIResult['data']));
+   	$('#data-container').append(JSON.stringify(APIResult['data'], undefined, 2));
 }
 
 async function handleSearchSubmit(url, selectedAPI, selectedParam) {
@@ -184,7 +184,7 @@ async function handleSearchSubmit(url, selectedAPI, selectedParam) {
         method: 'get',
        	url: url
     });
-   	$('#data-container').append(JSON.stringify(APIResult['data']));
+   	$('#data-container').append(JSON.stringify(APIResult['data'], undefined, 2));
 }
 
 async function handleSearchDelete(id) {
