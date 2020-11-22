@@ -127,7 +127,7 @@ a.is-medium {
 }
 .card-content {
 	height: calc(100% - 70px);
-	overflow: scroll;
+	/*overflow: scroll;*/
 }
 
 /* button components */
