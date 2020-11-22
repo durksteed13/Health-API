@@ -150,7 +150,8 @@ $('#api-selector').change(async function () {
   		$('#param-selector').append("<option value='"+paramName+"'>"+paramName+"</option>");
   	});
   	if(localStorage.getItem('loggedIn')) {
-  		$('#search-container').append("<div id='save-option' class='is-blue' onclick='saveSearch()'>Save This Search</div>");
+		$('#savebutton-container').empty();
+  		$('#savebutton-container').append("<div id='save-option' class='is-blue' onclick='saveSearch()'>Save This Search</div>");
   	}
 });
 
