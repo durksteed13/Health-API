@@ -241,7 +241,6 @@ function loadSaved() {
     }
 	$('#search-container').css("visibility", "hidden");
 	$('#search-container').css("height", "1px");
-	$('#search-container').css("overflow", "scroll");
 	$('#save-container').css("visibility", "visible");
 	$('#save-container').css("height", "auto");
 	$('#save-container').css("overflow", "normal");
