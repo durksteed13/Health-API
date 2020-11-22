@@ -15,6 +15,7 @@ adminAPI.create = (newAPI, result) => {
             return;
         }
         console.log("inserted new api ")
+        result(null, res);
     })
 }
 

@@ -15,7 +15,8 @@ adminAPIparam.create = (newAPI, result) => {
             result(err, null);
             return;
         }
-        console.log("inserted new api parameter")
+        console.log("inserted new api parameter");
+        result(null, res);
     })
 }
 
