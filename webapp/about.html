@@ -4,18 +4,8 @@
 	<title>Health API: Medical data made easy</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="healthapi.css">
+    <link rel="stylesheet" type="text/css" href="about.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
-    <style>
-    /*h1 {margin-top: 15px;}*/
-    p {
-        text-align: left;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        margin-right: 150px;
-        margin-left: 150px;
-    }
-    </style>
 </head>
 <body>
 	<div class="popup-overlay"></div>
@@ -26,8 +16,7 @@
 			<div class="navigation-logo">
 				<a href="index.html"><h1 class="red-light">Health API</h1></a>
 			</div>
-            <a href="about.html" style="margin-right: 5px;"><button id="btn-log" class="is-light red-light" onclick="">About</button></a>
-            <a href="help.html"><button id="btn-log" class="is-light red-light" onclick="">Help</button></a>
+            <a href="about.html" style="margin-right: 5px;"><button id="btn-log" class="is-light red-light" onclick="">Info</button></a>
 			<div class="navigation-list">
 				<button id="btn-log" class="is-light red-light btn" onclick="loadLoginForm()">Login</button>
 				<button id="btn-sign" class="red-dark btn" onclick="signUpForm()">Sign Up</button>
@@ -36,30 +25,37 @@
 		</div>
 	</div>
     <main>
-        <h1 class=" about-container red-dark">About HealthAPI</h1>
-        <p>
-            We are entering an age where the advances in technology have exponentially increased the availability of data.
-            Despite this abundance of information online, certain data can still prove to be elusive, and this
-            matter is never more important when it comes to our health. Even physicans have suggested the lack of
-            comprehensive databases that can be managed without having extensive coding ability.
-        </p>
-        <p>
-            Thus, our team of developers have worked to create a website that allows for easy and intuitive access to health data. 
-            Here, we take advantage of numerous APIs to present you with data in a crisp and simple fashion - no need to learn
-            everything on your own! By creating an account, you will be able to keep track of your relevant data and have access 
-            to your most recent searches.
-        </p>
-        <p>
-            Regardless of whether you are a doctor, therapist, or consumer, we hope that this site can be the bridge between
-            you and health data. Of course, always feel free to email us if you have a particular API that you would like to 
-            see added. Again, we believe access to health data should be EASY!
-        </p>
-        <!-- <div id="landing-navigation-container">
-            <a href="index.html"><button id="btn-log" class="is-light red-light is-right" onclick="">Back</button></a>
-        </div> -->
+        <div class="card-full red-border">
+            <div class='card-title red-light' style="border-bottom: 1px solid #FF1F57;"><h1 class="title">About</h1><div class="card-btn" id="about-card-btn">+</div></div>
+            <div class="info-container" id="about-container">
+                <p class="about-p">We are entering an age where the advances in technology have exponentially increased the availability of data. Despite this abundance of information online, certain data can still be elusive, especially when it comes to our health. Many healthcare professionals, students, and consumers could benefit from access to comprehensive databases without having extensive coding ability.</p>
+                <p class="about-p">HealthAPI is a website that allows for easy and intuitive access to health data. Take advantage of the numerous APIs on our platform to fetch data in a simple and easy process. By creating an account, you will be able to save specific searches and have even quicker access to your relevant data.</p>
+                <p class="about-p">Regardless of whether you are a healthcare professional or consumer, we hope that this site can be the bridge between you and health data. Thank you for visiting HealthAPI. 
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="card-full red-border" style="margin-top: -15px;">
+            <div class='card-title red-light' style="border-bottom: 1px solid #FF1F57;"><h1 class="title">General Questions</h1><div class="card-btn" id="faq-card-btn">+</div></div>
+            <div class="info-container" id="faq-container">
+                <h3 class="faq-q" style="margin-top: 10px;">How do I use this site?</h3>
+                <p class="faq-p">Our website allows you to retrieve specific health-related data without having to independently learn how to make API requests. By using our interface, users are 
+                able to easily retrieve data from their desired API and specific search parameters.</p>
+                <h3 class="faq-q">Who should be using this site?</h3>
+                <p class="faq-p"> Anyone! With our simple layout and intuitive design, our service gives you access to many medical APIs. HealthAPI is simply a bridge between any person interested in health data and API endpoints.</p>
+                <h3 class="faq-q">What are the benefits to creating an account?</h3>
+                <p class="faq-p">Creating an account allows you save specific API searches for future reference and quicker access. Particular users in the field of pharmacy, nutrition, biostatistics, etc. may be keen to take
+                advantage of this feature.</p>
+                <h3 class="faq-q">How can I request an API to be added?</h3>
+                <p class="faq-p">
+                Want a new API to be added to Health API? Email ______________
+                </p>
+            </div>
+        </div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="style.js"></script>
-	<script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="about.js"></script>
 </body>
 </html>
