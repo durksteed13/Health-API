@@ -1,0 +1,43 @@
+.card-full {
+	margin-top: 25px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+}
+.title {
+	margin-left: 25px;
+	font-size: 24px;
+}
+.about-p {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 18px;
+}
+.faq-q {
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 18px;
+	font-style: italic;
+	text-align: left;
+}
+.faq-p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+	margin-left: 35px;
+	margin-right: 25px;
+	font-size: 18px;
+}
+.card-btn {
+	padding: 5px 10px;
+	margin-left: auto;
+	margin-right: 25px;
+	font-size: 30px;
+	cursor: pointer;
+}
+.info-container {
+	visibility: hidden;
+	height: 0px;
+}

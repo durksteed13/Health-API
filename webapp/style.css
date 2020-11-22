@@ -60,6 +60,9 @@ select.is-disabled {
 	background-color: #FF1F57;
 	color: #FFF;
 }
+.red-border {
+	border: 1px solid #FF1F57;
+}
 .green-light {
 	color: #1DED92;
 }
@@ -94,6 +97,13 @@ a.is-medium {
 	font-size: 18px;
 }
 /* card components */
+.card-full {
+	width: 95%;
+	/*min-height: 200px;*/
+	background-color: #FFF;
+	border-radius: 10px;
+	margin-left: 2.5%;
+}
 .card-dynamic {
 	height: 40%;
 	width: 50%;
