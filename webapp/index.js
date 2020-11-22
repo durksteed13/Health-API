@@ -225,7 +225,7 @@ function loadSelect() {
 	$('#search-container').css("overflow", "normal");
 	$('#save-container').css("visibility", "hidden");
 	$('#save-container').css("height", "1px");
-	$('#save-container').css("overflow", "scroll");
+
 	$("#btn-log-save").removeClass("red-dark");
 	$("#btn-log-save").addClass("red-light");
 	$("#btn-log-save").addClass("is-light");
