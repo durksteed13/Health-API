@@ -16,7 +16,8 @@
 			</div>
 			<button id="btn-label" class="red-dark btn" onclick="">API Documentation</button>
 	</div>
-	<h1>General Functionalities</h1>
+	<br>
+	<h1 class="documentation-type">General Functionalities</h1>
 	<div class="documentation-container">
 		<div class="title">List APIs</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/api</div>
@@ -27,37 +28,37 @@
 	<div class="documentation-container">
 		<div class="title">List Parameters</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/api</div>
-		<div class="description"><b>Purpose:</b> Retrieve a list of all supported parameters from a given API</div>
+		<div class="description"><b>Purpose:</b> Retrieve a list of all selectable parameters for a given API</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Get link</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/apilink</div>
-		<div class="description"><b>Purpose:</b> Retrieve API link from a given API and it's parameter</div>
+		<div class="description"><b>Purpose:</b> Generate fetchable API link from a given API and it's parameter</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 
-	<h1>User Functionalities</h1>
+	<h1 class="documentation-type">User Functionalities</h1>
 	<div class="documentation-container">
 		<div class="title">Create User</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/users</div>
-		<div class="description"><b>Purpose:</b> Creates a user</div>
+		<div class="description"><b>Purpose:</b> Create a new user in the HealthAPI database</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Find User</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/users/:username</div>
-		<div class="description"><b>Purpose:</b> Retrieves a user given a username</div>
+		<div class="description"><b>Purpose:</b> Retrieve user information given a user id, used for logging in validation</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Save Search</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/usersStore/:id</div>
-		<div class="description"><b>Purpose:</b> Saves a specific API and it's parameters for a given user</div>
+		<div class="description"><b>Purpose:</b> Save a search in the HealthAPI database, consisting of a specific API and a parameters</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
@@ -71,48 +72,46 @@
 	<div class="documentation-container">
 		<div class="title">Delete Saved Searches</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/usersSearchesDelete/:id</div>
-		<div class="description"><b>Purpose:</b> Delete a given saved search</div>
+		<div class="description"><b>Purpose:</b> Delete a saved search from the HealthAPI database</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
-
-	<h1>Admin Functionalities</h1>
+	<h1 class="documentation-type">Admin Functionalities</h1>
 	<div class="documentation-container">
 		<div class="title">Create API</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/adminapi</div>
-		<div class="description"><b>Purpose:</b> Creates a new API name and url in the database</div>
+		<div class="description"><b>Purpose:</b> Create a new API name and associated url in the HealthAPI database</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Create Parameter</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/adminparam</div>
-		<div class="description"><b>Purpose:</b> Creates a parameter for a given existing API</div>
+		<div class="description"><b>Purpose:</b> Creates a specific parameter for a given existing API on the HealthAPI platform</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Get All Parameters</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/adminparam</div>
-		<div class="description"><b>Purpose:</b> Retrieve all possible parameters from database</div>
+		<div class="description"><b>Purpose:</b> Retrieve all possible parameters</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Delete API</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/adminapi/:apiname</div>
-		<div class="description"><b>Purpose:</b> Deletes a given API and all of it's related parameters</div>
+		<div class="description"><b>Purpose:</b> Delete an API and all of it's associated parameters</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
 	<div class="documentation-container">
 		<div class="title">Delete Parameter</div>
 		<div class="endpoint"><b>Endpoint:</b> www.example.com/adminparam/:apiname</div>
-		<div class="description"><b>Purpose:</b> Permanently delete a given parameter</div>
+		<div class="description"><b>Purpose:</b> Delete a given parameter</div>
 		<div class="description"><b>Sample Request and Response:</b></div>
 		<div class="example"><img src=""></div>
 	</div>
-
 </body>
 
 </html>

@@ -1,3 +1,14 @@
+.documentation-type {
+	margin-left: 40px;
+	margin-right: 25px;
+	margin-bottom: -15px;
+	padding: 10px;
+	background-color: blue;
+	text-decoration: underline;
+	background-color: #EBF4FF;
+	border-radius: 5px;
+}
+
 .documentation-container {
 	margin-left: 50px;
 	margin-top: 25px;
