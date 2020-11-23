@@ -4,7 +4,8 @@
   "description": "",
   "main": "426.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node webapp/server.js & http-server -p 8000 -a 0.0.0.0"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "http-server": "^0.12.3",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.1",
     "parser": "^0.1.4",
