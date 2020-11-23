@@ -66,6 +66,7 @@ main {
   	padding: 10px 10px;
   	text-align: left;
   	background-color: #FFF;
+	overflow-x: scroll;
 }
 #data-search {
 	margin-top: -20px;
