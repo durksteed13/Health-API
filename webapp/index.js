@@ -96,7 +96,7 @@ function checkLogIn() {
 		var role = localStorage.getItem('role');
 		loadSearches();
 		if(role == 1) {
-			$('#landing-navigation-container').append("<a href='admin.html'><button id='btn-log' class='is-light red-light user-btn' onclick=''>Admin Page</button></a>");
+			$('#landing-navigation-container').append("<a href='admin'><button id='btn-log' class='is-light red-light user-btn' onclick=''>Admin Page</button></a>");
 		}
 	} else {
 		$(".user-btn").remove();

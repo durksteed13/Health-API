@@ -172,7 +172,7 @@ $(document).ready(function() {
 	if(role == 1) {
 		$('body').css("visibility", "visible");
 	} else {
-		window.location.replace("index.html");
+		window.location.replace("index");
 	}
 	$('#nav-id').append("<button class='red-dark btn adminid' onclick='' style='margin-left: 10px;'>Admin Panel</button>");
 	loadAPIs();
