@@ -3,7 +3,7 @@
 async function getAPIs() {
 	const result = await axios({
         method: 'get',
-       	url: "http://localhost:3000/adminapi",
+       	url: "/adminapi",
 	});
 	return result.data;
 }
@@ -11,7 +11,7 @@ async function getAPIs() {
 async function loadAPIparams() {
 	const result = await axios({
         method: 'get',
-       	url: "http://localhost:3000/adminparam",
+       	url: "/adminparam",
 	});
 	return result.data;
 }
@@ -42,7 +42,7 @@ async function handleAdminNewApi() { // add new api
 	buildNewAPIForm(event);
 	const result = await axios({
         method: 'post',
-		url: "http://localhost:3000/adminapi",
+		url: "/adminapi",
 		data: {
 			name: name,
 			url: url
@@ -57,7 +57,7 @@ async function handleAdminNewApiParameter() { // add new parameters
 	buildNewParam(event);
 	const result = await axios({
         method: 'post',
-		url: "http://localhost:3000/adminparam",
+		url: "/adminparam",
 		data: {
 			api_used: api_used,
 			param: param,
@@ -71,7 +71,7 @@ async function handleDeleteAPI() { // deletes all APIs and it's corresponding pa
 	let apiname = $( "#apitodelete option:selected" ).text();
 	const result = await axios({
         method: 'delete',
-		url: `http://localhost:3000/adminapi/${apiname}`,
+		url: `/adminapi/${apiname}`,
 	});
 	buildDeleteAPI(event);
 }
@@ -80,7 +80,7 @@ async function handleDeleteParam() { // deletes specific parameter
 	let paramname = $( "#paramtodelete" ).val();
 	const result = await axios({
         method: 'delete',
-		url: `http://localhost:3000/adminparam/${paramname}`,
+		url: `/adminparam/${paramname}`,
 	});
 	buildDeleteParam(event);
 }

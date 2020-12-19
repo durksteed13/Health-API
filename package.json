@@ -5,7 +5,7 @@
   "main": "426.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node webapp/server.js & http-server -p 8000 -a 0.0.0.0"
+    "start": "node webapp/server.js"
   },
   "repository": {
     "type": "git",

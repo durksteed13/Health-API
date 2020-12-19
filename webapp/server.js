@@ -36,7 +36,9 @@ require("./routes/users.routes.js")(app);
 require("./routes/adminapi.routes.js")(app);
 require("./routes/adminparam.routes.js")(app);
 
+const port = process.env.PORT || 3000;
+
 // set port, listen for requests
-app.listen(3000, '0.0.0.0', () => {
+app.listen(port, '0.0.0.0', () => {
   console.log("Server is running on port 3000.");
 });

@@ -31,7 +31,7 @@ async function handleSignUp() {
 	var insertUserName = data[2]['value'];
 	const result = await axios({
         method: 'post',
-        url: 'http://localhost:3000/users',
+        url: '/users',
         data: {
           username : insertUserName,
           name : data[0]['value'],
@@ -58,7 +58,7 @@ async function handleLogIn() {
 	}
 	const result = await axios({
         method: 'post',
-       	url: "http://localhost:3000/users/"+insertUserName,
+       	url: "/users/"+insertUserName,
        	data: {
        		username : insertUserName,
        		password : data[1]['value']
@@ -107,7 +107,7 @@ function checkLogIn() {
 async function loadAPI() {
 	const result = await axios({
         method: 'get',
-       	url: "http://localhost:3000/api",
+       	url: "/api",
     });
     result['data'].forEach(api => {
     	apis.push(api['name']);
@@ -121,7 +121,7 @@ async function saveSearch() {
 	var selectedParam = $('#param-selector option:selected' ).text();
 	const result = await axios({
         method: 'post',
-       	url: "http://localhost:3000/usersStore/"+localStorage.getItem('id'),
+       	url: "/usersStore/"+localStorage.getItem('id'),
        	data: {
        		userID : localStorage.getItem('id'),
        		apiName : selectedAPI,
@@ -139,7 +139,7 @@ $('#api-selector').change(async function () {
   	var selected = $('#api-selector option:selected' ).text();
   	const result = await axios({
         method: 'post',
-       	url: "http://localhost:3000/api",
+       	url: "/api",
        	data: {
        		api : selected
        	}
@@ -163,7 +163,7 @@ async function handleAPISubmit() {
 	$('#data-search').append("Data from " + selectedAPI + ", " + selectedParam);
 	const result = await axios({
         method: 'get',
-       	url: "http://localhost:3000/apilink",
+       	url: "/apilink",
        	params: {
        		apiName : selectedAPI,
        		paramName : selectedParam
@@ -191,7 +191,7 @@ async function handleSearchSubmit(url, selectedAPI, selectedParam) {
 async function handleSearchDelete(id) {
 	const APIResult = await axios({
         method: 'delete',
-       	url: "http://localhost:3000/usersSearchesDelete/"+id,
+       	url: "/usersSearchesDelete/"+id,
        	data : {
        		searchID: id
        	}
@@ -204,7 +204,7 @@ async function loadSearches() {
 	$('#saves').empty();
 	const result = await axios({
         method: 'post',
-       	url: "http://localhost:3000/usersSearches/" + localStorage.getItem('id'),
+       	url: "/usersSearches/" + localStorage.getItem('id'),
        	data: {
        		userID : localStorage.getItem('id')
        	}
